@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8454D0BB2BB1426B001826A9 /* VideoPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D0BA2BB1426B001826A9 /* VideoPreviewCell.swift */; };
 		84AA75AD2BB0534A00D6466A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA75AC2BB0534A00D6466A /* AppDelegate.swift */; };
 		84AA75AF2BB0534A00D6466A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA75AE2BB0534A00D6466A /* SceneDelegate.swift */; };
 		84AA75B12BB0534A00D6466A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA75B02BB0534A00D6466A /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8454D0BA2BB1426B001826A9 /* VideoPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewCell.swift; sourceTree = "<group>"; };
 		84AA75A92BB0534A00D6466A /* codeSwitUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = codeSwitUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AA75AC2BB0534A00D6466A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84AA75AE2BB0534A00D6466A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				84AA75AC2BB0534A00D6466A /* AppDelegate.swift */,
 				84AA75AE2BB0534A00D6466A /* SceneDelegate.swift */,
 				84AA75B02BB0534A00D6466A /* ViewController.swift */,
+				8454D0BA2BB1426B001826A9 /* VideoPreviewCell.swift */,
 				84AA75B52BB0534D00D6466A /* Assets.xcassets */,
 				84AA75B72BB0534D00D6466A /* LaunchScreen.storyboard */,
 				84AA75BA2BB0534D00D6466A /* Info.plist */,
@@ -136,6 +139,7 @@
 			files = (
 				84AA75B12BB0534A00D6466A /* ViewController.swift in Sources */,
 				84AA75AD2BB0534A00D6466A /* AppDelegate.swift in Sources */,
+				8454D0BB2BB1426B001826A9 /* VideoPreviewCell.swift in Sources */,
 				84AA75AF2BB0534A00D6466A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

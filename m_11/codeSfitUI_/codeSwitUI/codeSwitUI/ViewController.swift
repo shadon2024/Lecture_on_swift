@@ -49,6 +49,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Задаём количество ячеек в таблице
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
+        // test
+        // test
+        // test
+        // test
     }
 
 }

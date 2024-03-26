@@ -10,12 +10,13 @@ import UIKit
 class ViewController: UIViewController {
     var isNewValue = true
     var operation: MathOperation? = nil
-    // сохранит предедущую операцию
     var previousOperation: MathOperation? = nil
     var result: Int = 0
     var newValue: Int = 0
-    
+    var number: Double?
 
+    
+// MARK: Buttons
     @IBAction func onOne(_ sender: Any) {
         addDigit("1")
     }
@@ -57,19 +58,12 @@ class ViewController: UIViewController {
     }
     
     
-    
-//    @IBAction func onEqual(_ sender: Any) {
-//        // =
-//        calculate()
-//    }
-    
-    
+
+// MARK: MathOperation
     @IBAction func onEqual(_ sender: Any) {
         // =
         calculate()
     }
-    
-    
     
     @IBAction func onPlus(_ sender: Any) {
         // +
@@ -81,26 +75,40 @@ class ViewController: UIViewController {
     
     @IBAction func onSubtract(_ sender: Any) {
         // -
+        operation = .substract
+        previousOperation = nil
+        isNewValue = true
+        result = getInteger()
     }
     
     @IBAction func onMultiply(_ sender: Any) {
         // *
+        operation = .multiply
+        previousOperation = nil
+        isNewValue = true
+        result = getInteger()
     }
     
     @IBAction func onDivide(_ sender: Any) {
         // 4/2 = 2
+        operation = .divide
+        previousOperation = nil
+        isNewValue = true
+        result = getInteger()
     }
+    
     
     @IBAction func onPercent(_ sender: Any) {
         // %
+        var number1 = Double(resulitLabel.text!)
+        number1 = number1! / 100
+        resulitLabel.text = String(number1!)
+        isNewValue = true
     }
     
     
-    @IBAction func onComma(_ sender: Any) {
-        // ,
-    }
     
-    
+    // MARK: ButtonReset
     @IBAction func onReset(_ sender: Any) {
        isNewValue = true
         result = 0
@@ -112,11 +120,7 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func onClear(_ sender: Any) {
-        // clear
-    }
-    
-    
+    // MARK: ResulitLabel
     @IBOutlet weak var resulitLabel: UILabel!
     
     
@@ -124,6 +128,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         resulitLabel.text = ConstansString.CalculatorTitle
     }
+    
     
     func addDigit(_ digit: String) {
         if isNewValue {
@@ -135,11 +140,12 @@ class ViewController: UIViewController {
         resulitLabel.text = digits
     }
     
+    
     func getInteger() -> Int {
         return Int(resulitLabel.text ?? "0") ?? 0
     }
 
-    // метод каторый считает result
+
     func calculate() {
         guard let operation = operation else {
             return
@@ -149,23 +155,17 @@ class ViewController: UIViewController {
             newValue = getInteger()
         }
         
-//        if operation == "+" {
-//            result += newValue
-//        } else {
-//            return
-//        }
         result = operation.makeOperation(result: result, newValue: newValue)
-        
         
         previousOperation = operation
         resulitLabel.text = "\(result)"
         isNewValue = true
     }
-
 }
 
+
 enum MathOperation {
-    case sum, substract
+    case sum, substract, multiply, divide
     
     func makeOperation(result: Int, newValue: Int) -> Int {
         switch self {
@@ -173,6 +173,10 @@ enum MathOperation {
             return (result + newValue)
         case .substract:
             return (result - newValue)
+        case .multiply:
+            return (result * newValue)
+        case .divide:
+            return (result / newValue)
         }
     }
     

@@ -8,5 +8,5 @@
 import Foundation
 
 enum ConstansString {
-    static let CalculatorTitle = "Calculator"
+    static let CalculatorTitle = "0"
 }
